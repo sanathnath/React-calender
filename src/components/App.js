@@ -114,15 +114,12 @@ const App = () => {
                 return (
                   <tr>
                     {item.map((value) => {
-                      
+                      classNum++;
                       if (value == d && year == y && month == monthArr[m]) {
                         return <td id="today">{value}</td>;
-                      }else if(value+firstDay>firstDay){
-                        classNum++;
-                        return <td id={"cell" + classNum}>{value}</td>;
-                      }else{
-                        return <td id="cel">{value}</td>;
                       }
+                        return <td id={"cell" + classNum}>{value}</td>;
+                      
                     })}
                   </tr>
                 );
