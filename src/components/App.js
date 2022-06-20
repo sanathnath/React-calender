@@ -17,9 +17,9 @@ const monthArr = [
 ];
 const App = () => {
   const [isYearClick, setIsYearClick] = useState(false);
-  const [month, setMonth] = useState(new Date().getMonth());
-  const [year, setYear] = useState(new Date().getFullYear());
-  const [newYear, setNewYear] = useState(new Date().getFullYear());
+  const [month, setMonth] = useState(Number(new Date().getMonth()));
+  const [year, setYear] = useState(Number(new Date().getFullYear()));
+  const [newYear, setNewYear] = useState(Number(new Date().getFullYear()));
 
   const date = 1;
   let classNum = 0;
@@ -137,7 +137,8 @@ const App = () => {
             <button
               id="previous-month"
               onClick={() => {
-                setMonth(month - 1);
+                if(month>0)
+                  setMonth(month - 1);
               }}
             >
               &#60;
@@ -145,7 +146,8 @@ const App = () => {
             <button
               id="next-month"
               onClick={() => {
-                setMonth(month + 1);
+                if(month < 11)
+                  setMonth(month + 1);
               }}
             >
               &#62;
