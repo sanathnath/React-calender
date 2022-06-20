@@ -3,10 +3,39 @@ h1 {
     text-align: center;
     }
     
-
 button{
     color: #27aedb;
     text-align: center;
     justify-content: center;
     align-items: center;
+}
+#main{
+    padding: 2rem 6rem;
+    height: 100vh;
+}
+.calendar-div{
+    padding: 0 3rem;
+}
+.nav{
+    display: flex;
+    justify-content: space-around;
+}
+.table{
+    margin-top: 3rem;
+}
+table{
+    width: 100%;
+    border-spacing: 0;
+}
+td{
+    border: .5px solid black;
+}
+#today{
+    background-color: #27aedb;
+}
+.buttons-div{
+    margin-top: 1rem;
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
 }
