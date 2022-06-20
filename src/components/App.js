@@ -73,7 +73,7 @@ const App = () => {
           <h1 id="heading">Calendar</h1>
         </div>
         <div className="nav">
-          <select name="" value={month} id="month" onChange={changeMonth}>
+          <select value={month} id="month" onChange={changeMonth}>
             {monthArr.map((item) => {
               return <option value={item}>{item}</option>;
             })}
@@ -114,11 +114,15 @@ const App = () => {
                 return (
                   <tr>
                     {item.map((value) => {
-                      classNum++;
+                      
                       if (value == d && year == y && month == monthArr[m]) {
                         return <td id="today">{value}</td>;
+                      }else if(value+firstDay>firstDay){
+                        classNum++;
+                        return <td id={"cell" + classNum}>{value}</td>;
+                      }else{
+                        return <td id="cel">{value}</td>;
                       }
-                      return <td id={"cell" + classNum}>{value}</td>;
                     })}
                   </tr>
                 );
